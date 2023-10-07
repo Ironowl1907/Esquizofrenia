@@ -1,1 +1,3 @@
-extends Node2D
+extends Area2D
+
+var can_grab = false
