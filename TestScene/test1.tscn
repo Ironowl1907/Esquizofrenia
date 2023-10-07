@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0bsnc6sm5ua7"]
 
-[ext_resource type="Texture2D" path="res://Resources/ivana-cajina-asuyh-_ZX54-unsplash.jpg" id="1_8cip6"]
+[ext_resource type="Texture2D" uid="uid://efbe7hcosmt0" path="res://Resources/ivana-cajina-asuyh-_ZX54-unsplash.jpg" id="1_8cip6"]
 [ext_resource type="PackedScene" path="res://InfoTexts/InfoBasic.tscn" id="2_ss6l4"]
-[ext_resource type="PackedScene" uid="uid://dosl702vrdjkh" path="res://Planests/BasicPlanet.tscn" id="3_lw04g"]
+[ext_resource type="PackedScene" uid="uid://dosl702vrdjkh" path="res://Planets/BasicPlanet.tscn" id="3_lw04g"]
 
 [node name="Node2D" type="Node2D"]
 

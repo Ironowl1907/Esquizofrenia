@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d6mi8q62c3qo"]
+
+[ext_resource type="Texture2D" uid="uid://ckuq4hr6y0w36" path="res://icon.svg" id="1_cemii"]
+[ext_resource type="Script" path="res://Scripts/asteroidsgame.gd" id="1_cs3uk"]
+[ext_resource type="Script" path="res://Scripts/Asteroid.gd" id="1_xbgsg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvfck"]
+size = Vector2(24, 24)
+
+[node name="Asteroids" type="Node2D"]
+script = ExtResource("1_cs3uk")
+
+[node name="Ship" type="Area2D" parent="."]
+position = Vector2(273, 217)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
+shape = SubResource("RectangleShape2D_yvfck")
+
+[node name="Icon" type="Sprite2D" parent="Ship"]
+scale = Vector2(0.203125, 0.203125)
+texture = ExtResource("1_cemii")
+
+[node name="Asteroid" type="Area2D" parent="."]
+position = Vector2(598, 324)
+script = ExtResource("1_xbgsg")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Asteroid"]
+shape = SubResource("RectangleShape2D_yvfck")
+
+[node name="Icon" type="Sprite2D" parent="Asteroid"]
+scale = Vector2(0.203125, 0.203125)
+texture = ExtResource("1_cemii")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
