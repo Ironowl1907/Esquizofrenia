@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://efbe7hcosmt0" path="res://Resources/ivana-cajina-asuyh-_ZX54-unsplash.jpg" id="1_8cip6"]
 [ext_resource type="PackedScene" uid="uid://2w03leyupskl" path="res://InfoTexts/InfoBasic.tscn" id="2_ss6l4"]
-[ext_resource type="PackedScene" uid="uid://55q8cncovhlo" path="res://Planests/BasicPlanet.tscn" id="3_lw04g"]
+[ext_resource type="PackedScene" uid="uid://55q8cncovhlo" path="res://Planets/BasicPlanet.tscn" id="3_lw04g"]
 
 [node name="Node2D" type="Node2D"]
 

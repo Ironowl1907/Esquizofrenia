@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://d6mi8q62c3qo"]
+
+[ext_resource type="Texture2D" uid="uid://ckuq4hr6y0w36" path="res://icon.svg" id="1_cemii"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y31jy"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x1trj"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_30fs5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ugxim"]
+normal = Vector2(-1, 0)
+
+[node name="Asteroids" type="Node2D"]
+
+[node name="Boundaries" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries"]
+shape = SubResource("WorldBoundaryShape2D_y31jy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries"]
+shape = SubResource("WorldBoundaryShape2D_x1trj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(1152, 648)
+shape = SubResource("WorldBoundaryShape2D_30fs5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries"]
+position = Vector2(1152, 648)
+shape = SubResource("WorldBoundaryShape2D_ugxim")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(160, 297)
+texture = ExtResource("1_cemii")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Icon2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(297, 344)
+texture = ExtResource("1_cemii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
