@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmr8in5ie1qbb"]
+
+[ext_resource type="Texture2D" uid="uid://ckuq4hr6y0w36" path="res://icon.svg" id="1_j5vg1"]
+[ext_resource type="Script" path="res://box.gd" id="1_pud66"]
+[ext_resource type="Script" path="res://text.gd" id="2_if7rb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frpm5"]
+size = Vector2(120, 35)
+
+[node name="letras" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 186.0
+offset_top = 76.0
+offset_right = 186.0
+offset_bottom = 76.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 23.0
+offset_right = 148.0
+offset_bottom = 61.0
+text = "Esta info es:"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="box" type="Area2D" parent="Node2D"]
+script = ExtResource("1_pud66")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/box"]
+position = Vector2(-3.69549e-06, 0.499999)
+scale = Vector2(0.96875, 0.304688)
+texture = ExtResource("1_j5vg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/box"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_frpm5")
+
+[node name="text" type="Area2D" parent="Node2D"]
+position = Vector2(8, 137)
+script = ExtResource("2_if7rb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/text"]
+position = Vector2(0.710663, -0.143065)
+rotation = 1.55592
+scale = Vector2(0.304687, 0.979929)
+texture = ExtResource("1_j5vg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/text"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_frpm5")
+
+[connection signal="area_entered" from="Node2D/box" to="Node2D/box" method="_on_area_entered"]
