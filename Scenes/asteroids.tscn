@@ -11,7 +11,7 @@ size = Vector2(24, 24)
 script = ExtResource("1_cs3uk")
 
 [node name="Ship" type="Area2D" parent="."]
-position = Vector2(60, 45)
+position = Vector2(273, 217)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
@@ -32,3 +32,6 @@ shape = SubResource("RectangleShape2D_yvfck")
 [node name="Icon" type="Sprite2D" parent="Asteroid"]
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("1_cemii")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
