@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmr8in5ie1qbb"]
+[gd_scene load_steps=4 format=3 uid="uid://dmr8in5ie1qbb"]
 
-[ext_resource type="Texture2D" uid="uid://ckuq4hr6y0w36" path="res://icon.svg" id="1_j5vg1"]
 [ext_resource type="Script" path="res://box.gd" id="1_pud66"]
 [ext_resource type="Script" path="res://text.gd" id="2_if7rb"]
 
@@ -15,40 +14,101 @@ offset_top = 76.0
 offset_right = 186.0
 offset_bottom = 76.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 23.0
-offset_right = 148.0
-offset_bottom = 61.0
-text = "Esta info es:"
+[node name="question1" type="Node2D" parent="."]
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="box" type="Area2D" parent="Node2D"]
+[node name="box" type="Area2D" parent="question1"]
+position = Vector2(263, -26)
 script = ExtResource("1_pud66")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/box"]
-position = Vector2(-3.69549e-06, 0.499999)
-scale = Vector2(0.96875, 0.304688)
-texture = ExtResource("1_j5vg1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/box"]
-position = Vector2(0, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="question1/box"]
+position = Vector2(29, -1)
 shape = SubResource("RectangleShape2D_frpm5")
 
-[node name="text" type="Area2D" parent="Node2D"]
-position = Vector2(8, 137)
-script = ExtResource("2_if7rb")
+[node name="RichTextLabel" type="RichTextLabel" parent="question1"]
+offset_left = -146.0
+offset_top = -39.0
+offset_right = 226.0
+offset_bottom = -1.0
+bbcode_enabled = true
+text = "La composicion de la atmosfera de la tierra es"
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/text"]
-position = Vector2(0.710663, -0.143065)
-rotation = 1.55592
-scale = Vector2(0.304687, 0.979929)
-texture = ExtResource("1_j5vg1")
+[node name="question2" type="Node2D" parent="."]
+position = Vector2(1, 144)
+
+[node name="box" type="Area2D" parent="question2"]
+position = Vector2(101, -25)
+script = ExtResource("1_pud66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="question2/box"]
+position = Vector2(29, -1)
+shape = SubResource("RectangleShape2D_frpm5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="question2"]
+offset_left = -146.0
+offset_top = -39.0
+offset_right = 226.0
+offset_bottom = -1.0
+bbcode_enabled = true
+text = "La gravedad de la tiera es "
+
+[node name="question3" type="Node2D" parent="."]
+position = Vector2(0, 47)
+
+[node name="box" type="Area2D" parent="question3"]
+position = Vector2(263, -26)
+script = ExtResource("1_pud66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="question3/box"]
+position = Vector2(29, -1)
+shape = SubResource("RectangleShape2D_frpm5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="question3"]
+offset_left = -146.0
+offset_top = -39.0
+offset_right = 226.0
+offset_bottom = -1.0
+bbcode_enabled = true
+text = "El por"
+
+[node name="question4" type="Node2D" parent="."]
+position = Vector2(1, 98)
+
+[node name="box" type="Area2D" parent="question4"]
+position = Vector2(263, -26)
+script = ExtResource("1_pud66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="question4/box"]
+position = Vector2(29, -1)
+shape = SubResource("RectangleShape2D_frpm5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="question4"]
+offset_left = -146.0
+offset_top = -39.0
+offset_right = 226.0
+offset_bottom = -1.0
+bbcode_enabled = true
+text = "La composicion de la atmosfera de la tierra es"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(2, 99)
+
+[node name="text" type="Area2D" parent="Node2D"]
+position = Vector2(488, -127)
+script = ExtResource("2_if7rb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/text"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_frpm5")
 
-[connection signal="area_entered" from="Node2D/box" to="Node2D/box" method="_on_area_entered"]
+[node name="Label" type="Label" parent="Node2D/text"]
+offset_left = -58.0
+offset_top = -20.0
+offset_right = -16.0
+offset_bottom = 6.0
+scale = Vector2(2.16, 1.36)
+text = "cuarto"
+
+[connection signal="area_entered" from="question1/box" to="question1/box" method="_on_area_entered"]
+[connection signal="area_entered" from="question2/box" to="question2/box" method="_on_area_entered"]
+[connection signal="area_entered" from="question3/box" to="question3/box" method="_on_area_entered"]
+[connection signal="area_entered" from="question4/box" to="question4/box" method="_on_area_entered"]
