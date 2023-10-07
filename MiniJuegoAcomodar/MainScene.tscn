@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://gg2ko0buueey"]
+
+[ext_resource type="PackedScene" uid="uid://c2jbgvh34ye4u" path="res://MiniJuegoAcomodar/Rocket.tscn" id="1_hrayh"]
+[ext_resource type="Script" path="res://MiniJuegoAcomodar/Rocket.gd" id="2_o1h5h"]
+[ext_resource type="PackedScene" uid="uid://cq7okydm12mk5" path="res://MiniJuegoAcomodar/floor.tscn" id="2_pgu3t"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Rocket" parent="." instance=ExtResource("1_hrayh")]
+script = ExtResource("2_o1h5h")
+
+[node name="Floor" parent="." instance=ExtResource("2_pgu3t")]
+position = Vector2(4, 104)
